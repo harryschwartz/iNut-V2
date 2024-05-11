@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iNut Legend</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>iNut</h1>
+        <h2>Types</h2>
+    </header>
+    <section id="nuts" class="nuts">
+        <div id="peanuts" class="nut">
+            <img src="./assets/peanut.png" alt="cartoon peanut png">
+            <p>Peanuts</p>
+        </div>
+        <div id="chestnuts" class="nut">
+            <img src="./assets/chestnut.png" alt="cartoon chestnut png">
+            <p>Chestnuts</p>
+        </div>
+        <div id="acorns" class="nut">
+            <img src="./assets/acorn.png" alt="cartoon acorn png">
+            <p>Acorns</p>
+        </div>
+        <div id="walnuts" class="nut">
+            <img src="./assets/walnut.png" alt="cartoon walnut png">
+            <p>Walnuts</p>
+        </div>
+        <div id="pecans" class="nut">
+            <img src="./assets/pecan.png" alt="cartoon pecan png">
+            <p>Pecans</p>
+        </div>
+        <div id="hazelnuts" class="nut">
+            <img src="./assets/hazelnut.png" alt="cartoon hazelnut png">
+            <p>Hazelnuts</p>
+        </div>
+        <div id="almonds" class="nut">
+            <img src="./assets/almond.png" alt="cartoon almond png">
+            <p>Almonds</p>
+        </div>
+        <div id="beech nuts" class="nut">
+            <img src="./assets/beechnut.png" alt="cartoon beech nut png">
+            <p>Beech Nuts</p>
+        </div>
+        <div id="pine nuts" class="nut">
+            <img src="./assets/pinenut.png" alt="cartoon pine nut png">
+            <p>Pine Nuts</p>
+        </div>
+        <div id="macadamia" class="nut">
+            <img src="./assets/macadamia.png" alt="cartoon macadamia nut png">
+            <p>Macadamia</p>
+        </div>
+    </section>
+    <form action="submit" method="get" id="passkey">
+        <input type="text" id="passkeyInput" placeholder="Member Passkey">
+        <br>
+        <button>Reveal More Info</button>
+    </form>
+    <script>
+        function togglePage() {
+            //CHANGE BACKGROUND COLOR
+            // Toggle the background color of the body
+            const body = document.body;
+            const currentColor = window.getComputedStyle(body).backgroundColor;
+
+            // Check if the current background color is green using its RGB equivalent
+            if (currentColor === 'rgb(37, 107, 98)') {  // This is the RGB representation of #256B62
+                body.style.backgroundColor = 'white';  // Change to white if it's green
+            } else {
+                body.style.backgroundColor = 'rgb(37, 107, 98)';  // Change to green if it's not
+            }
+
+            // Toggle the text color of the header
+            const header = document.querySelector('header'); // Correctly select the header
+            header.style.color = (header.style.color === 'white') ? '' : 'white'; // Toggle the color between default and white
+
+            //Toggle the text color and content of p
+
+            // Toggle the text color and innerHTML of all paragraphs
+        const toggleText = {
+            'Peanuts': 'Pee Nuts',
+            'Pee Nuts': 'Peanuts',
+            'Chestnuts': 'Chest Nuts',
+            'Chest Nuts': 'Chestnuts',
+            'Acorns': 'All the way',
+            'All the way': 'Acorns',
+            'Walnuts': 'Backdoor',
+            'Backdoor': 'Walnuts',
+            'Pecans': 'Blowie',
+            'Blowie': 'Pecans',
+            'Hazelnuts': 'Handy',
+            'Handy': 'Hazelnuts',
+            'Almonds': 'OTPHJ',
+            'OTPHJ': 'Almonds',
+            'Beech Nuts': 'Big Kees',
+            'Big Kees': 'Beech Nuts',
+            'Pine Nuts': 'Lil Kees',
+            'Lil Kees': 'Pine Nuts',
+            'Macadamia': 'Cuddles',
+            'Cuddles': 'Macadamia'
+        };
+            // Toggle the text color of all paragraphs
+            const paragraphs = document.querySelectorAll('p');
+            paragraphs.forEach(p => {
+                p.style.color = (p.style.color === 'white') ? 'black' : 'white';
+                p.innerHTML = toggleText[p.innerHTML];
+            });
+
+            //CHANGE TOGGLE BUTTON
+            // Find the toggle button and change its style
+            const button = document.querySelector('#passkey button');
+            const buttonBgColor = window.getComputedStyle(button).backgroundColor;
+            const buttonText = window.getComputedStyle(button).color;
+
+            // Check and toggle the button background color
+            if (buttonBgColor === 'rgb(242, 204, 143)') {  // RGB representation of #F2CC8F
+                button.style.backgroundColor = '';  // Reset to default or set a specific color
+                button.style.color = 'white'; 
+            } else {
+                button.style.backgroundColor = 'rgb(242, 204, 143)';  // Set to #F2CC8F
+                button.style.color = 'black';  
+            }
+
+            //TOGGLE HEADER TEXT
+            const headerText = document.querySelector('h2');
+            if (headerText.innerHTML === 'Types') {
+                headerText.innerHTML = 'Definitions';
+            } else {
+                headerText.innerHTML = 'Types';
+            }
+        }
+
+        function replaceFormWithToggleButton() {
+            const formContainer = document.getElementById('passkey');
+            formContainer.innerHTML = '<button onclick="togglePage()">Toggle Page</button>';
+        }
+
+        document.getElementById('passkey').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent the default form submission action
+            const passkey = document.getElementById('passkeyInput').value;
+            const correctPasskey = "spikebizz"; // Set your correct passkey here
+
+            if (passkey === correctPasskey) {
+                replaceFormWithToggleButton();
+            } else {
+                alert('Incorrect passkey!');
+                // Actions for incorrect passkey can be handled here
+            }
+        });
+    </script>
+</body>
+
+</html>

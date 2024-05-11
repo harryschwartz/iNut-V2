@@ -1,0 +1,76 @@
+body {
+    background-color: white;
+}
+
+h1 {
+    font-family: 'Amatic SC';
+    font-size: 128px;
+    margin-bottom: 0;
+}
+
+h2 {
+    margin-top: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    font-size: 36px;
+}
+
+header {
+    color: #256B62;
+    text-align: center;
+}
+
+p {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: regular;
+    font-size: 24px;
+}
+
+img {
+    height: 100px;
+    max-width: 100px;
+    margin-right: 36px;
+}
+
+.nuts {
+    display: flex;
+    flex-direction: column;
+}
+
+.nut {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+   
+}
+
+form {
+    width: 50%;
+    margin-left: 25%;
+  }
+
+  input, button {
+    width: 100%; /* Makes input and button fill the form's width */
+    padding: 8px; /* Adds some padding for aesthetics */
+    margin: 8px auto; /* Adds margin for spacing between elements */
+    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+  }
+
+  input {
+    padding: 10px 8px;
+  }
+
+  button {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: #256B62;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid black;
+  }
+
+button:hover {
+    background-color: #84BBA2;
+}
